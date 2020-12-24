@@ -1,11 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const UserController = require("../controllers/UserController");
+const validations = require("../middleware/validationMiddleware");
 
-router.post("/addUser", validation.userValidation, UserController.addUser);
+router.post("/addUser", validations.userValidation, UserController.addUser);
 
-router.get("/getCategory/:id", UserController.getUser);
+// router.get("/getUser/:id", UserController.getUser);
 
 router.get("/", UserController.getUsers);
 
-module.exports.router;
+module.exports = router;

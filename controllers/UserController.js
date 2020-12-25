@@ -40,3 +40,4 @@ exports.getUsers = async (req, res) => {
     checkError(res, err, err.message, 500);
   }
 };
+

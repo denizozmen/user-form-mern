@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+const cors = require("cors");
 
 require("dotenv").config();
 const dbConnect = require("./models/dbConnect");
@@ -14,6 +15,7 @@ app.listen(port, () => {
 
 //database connect
 dbConnect();
+app.use(cors());
 
 app.use("/", express.static(path.join(__dirname + "/node_modules")));
 app.use(express.json());

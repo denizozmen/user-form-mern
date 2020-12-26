@@ -2,3 +2,10 @@
 .env
 not.md
 Procfile
+
+.DS_Store
+node_modules/
+.env
+*.orig
+.idea/
+.vscode/

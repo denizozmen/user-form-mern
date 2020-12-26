@@ -17,6 +17,15 @@ app.listen(port, () => {
 dbConnect();
 app.use(cors());
 
-app.use("/", express.static(path.join(__dirname + "/node_modules")));
 app.use(express.json());
 app.use("/api", router);
+
+if (process.env.NODE.ENV === "production") {
+  app.use(express.static("client/build"));
+  app.get("*"),
+    (req, res) => {
+      res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+    };
+}
+
+app.use("/", express.static(path.join(__dirname + "/node_modules")));

@@ -1,7 +1,7 @@
 const express = require("express");
-const bodyParser = require('body-parser');
+const bodyParser = require("body-parser");
 const cors = require("cors");
-const path = require('path')
+const path = require("path");
 const app = express();
 const dbConnect = require("./models/dbConnect");
 
@@ -22,14 +22,13 @@ app.listen(port, () => {
 //database connect
 dbConnect();
 
-
 app.use(express.json());
 app.use("/api", router);
 
-app.use(express.static(path.join(__dirname, '../build')))
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../build'))
-})
+app.use(express.static(path.join(__dirname, "client", "build")));
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
 
 // if (process.env.NODE.ENV === "production") {
 //   app.use(express.static("client/build"));

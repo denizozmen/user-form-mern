@@ -4,11 +4,11 @@
 
 
 .logoreact{
-  text-align: right;
+  text-align: left;
 }
 
 .App-logo {
-  height: 20vmin;
+  height: 10vmin;
   pointer-events: none;
   
 
@@ -44,8 +44,15 @@
   }
 }
 
-.table{
-  border: 1px;
-  border-color: black;
+.userTable{
+  width: 50vmax;
+  margin: auto;
+  margin-top: 60px;
   
+}
+
+.userForm{
+  width: 60vmin;
+  margin: auto;
+  margin-top: 60px;
 }

@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import rootlogo from "./images/logo_root.gif";
 import "./App.css";
 import Usertable from "./components/Table";
+import UserForm from "./components//Form";
 
 function App() {
   return (
@@ -12,25 +13,14 @@ function App() {
       <div>
         <img src={rootlogo} className="" alt="logo" />
       </div>
-      <Usertable />
+      <div className="userForm">
+        <UserForm />
+      </div>
+      <div className="userTable">
+        <Usertable />
+      </div>
     </div>
   );
 }
 
 export default App;
-
-{
-  /* <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p> */
-}
-{
-  /* <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */
-}

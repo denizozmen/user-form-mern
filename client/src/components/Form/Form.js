@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import ReactDOM from "react-dom";
+import React from "react";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
+import "./Form.css";
 
 const validationSchema = yup.object({
   firstName: yup
@@ -14,8 +14,8 @@ const validationSchema = yup.object({
 
   phone: yup
     .number("Enter your Phone number")
-    .min(9, "Phone number should be of maximum 12 characters length")
-    .required("Phone number is required"),
+    .required("Phone number is required")
+    .min(3, "Phone number should be of max 12 characters length"),
 });
 
 const WithMaterialUI = () => {
@@ -41,8 +41,7 @@ const WithMaterialUI = () => {
         .catch((error) => {
           console.error("Error:", error);
         });
-
-      window.location.reload();
+      // window.location.reload();
     },
   });
 
@@ -73,14 +72,19 @@ const WithMaterialUI = () => {
           fullWidth
           id="phone"
           name="phone"
-          label="Phone Number"
+          label="Phone Number "
           value={formik.values.phone}
           onChange={formik.handleChange}
           error={formik.touched.phone && Boolean(formik.errors.phone)}
           helperText={formik.touched.phone && formik.errors.phone}
         />
-
-        <Button color="primary" variant="contained" fullWidth type="submit">
+        <Button
+          className="ButtonSubmit"
+          color="primary"
+          variant="contained"
+          type="submit"
+          size="small"
+        >
           Submit
         </Button>
       </form>

@@ -1,11 +1,20 @@
 .App {
   text-align: center;
+ 
 }
 
 
 .logoreact{
-  text-align: left;
+  display: flex;
+  align-items: left; 
+  margin-bottom: 10px;
+ 
 }
+
+.head{
+  font-size: calc(8px + 2vmin);
+}
+
 
 .App-logo {
   height: 10vmin;
@@ -51,8 +60,3 @@
   
 }
 
-.userForm{
-  width: 60vmin;
-  margin: auto;
-  margin-top: 60px;
-}

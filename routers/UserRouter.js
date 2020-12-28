@@ -9,4 +9,6 @@ router.post("/addUser", validations.userValidation, UserController.addUser);
 
 router.get("/", UserController.getUsers);
 
+router.delete("/deleteUser/:id", UserController.deleteUser);
+
 module.exports = router;

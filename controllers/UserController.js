@@ -41,3 +41,12 @@ exports.getUsers = async (req, res) => {
   }
 };
 
+exports.deleteUser = async (req, res) => {
+  try {
+    await User.deleteOne({ _id: req.params.id });
+
+    res.status(200).send("Data is deleted");
+  } catch (err) {
+    checkError(res, err, err.message, 500);
+  }
+};

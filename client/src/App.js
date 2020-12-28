@@ -1,14 +1,15 @@
 import logo from "./logo.svg";
-import rootlogo from "./images/logo_root.gif";
 import "./App.css";
-import Usertable from "./components/Table";
-import UserForm from "./components//Form";
+import rootlogo from "./images/logo_root.gif";
+import Usertable from "./components/Table/Table";
+import UserForm from "./components/Form/Form";
 
 function App() {
   return (
     <div className="App">
       <div className="logoreact">
         <img src={logo} className="App-logo" alt="logo" />
+        <h1 className="head">MERN-STACK</h1>
       </div>
       <div>
         <img src={rootlogo} className="" alt="logo" />

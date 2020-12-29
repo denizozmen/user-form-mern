@@ -15,6 +15,11 @@ const useStyles = makeStyles({
   table: {
     minWidth: 200,
   },
+  deleteButton: {
+    marginTop: 10,
+    marginRight: 10,
+    width: 10,
+  },
 });
 
 export default function BasicTable() {
@@ -22,7 +27,7 @@ export default function BasicTable() {
   const [rows, setRows] = useState([]);
 
   const Show = () => {
-    fetchData("https://user-form-mern.herokuapp.com/api/user").then((data) => {
+    fetchData("/api/user").then((data) => {
       setRows(data);
     });
   };
@@ -60,8 +65,10 @@ export default function BasicTable() {
                 <TableCell align="center">{row.lastName}</TableCell>
                 <TableCell align="center">{row.phone}</TableCell>
                 <Button
+                  className={classes.deleteButton}
                   variant="contained"
                   color="secondary"
+                  size="small"
                   onClick={(e) => userDelete(row._id)}
                 >
                   DELETE

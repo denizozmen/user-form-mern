@@ -34,7 +34,9 @@ exports.addUser = async (req, res) => {
 
 exports.getUsers = async (req, res) => {
   try {
-    const users = await User.find({}).where("status", /[^deleted]/);
+    const users = await User.find({})
+      .sort({ createdDate: -1 })
+      .where("status", /[^deleted]/);
     res.status(200).json(users);
   } catch (err) {
     checkError(res, err, err.message, 500);

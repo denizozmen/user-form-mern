@@ -27,7 +27,7 @@ const WithMaterialUI = () => {
     },
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      fetch("/api/user/addUser", {
+      fetch("https://user-form-mern.herokuapp.com/api/user/addUser", {
         method: "POST", // or 'PUT'
         headers: {
           "Content-Type": "application/json",

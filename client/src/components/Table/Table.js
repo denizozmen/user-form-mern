@@ -27,13 +27,13 @@ export default function BasicTable() {
   const [rows, setRows] = useState([]);
 
   const Show = () => {
-    fetchData("/api/user").then((data) => {
+    fetchData("https://user-form-mern.herokuapp.com/api/user").then((data) => {
       setRows(data);
     });
   };
 
   const userDelete = (id) => {
-    deleteData(`/api/user/deleteUser/${id}`)
+    deleteData(`https://user-form-mern.herokuapp.com/api/user/deleteUser/${id}`)
       .then((data) => {
         console.log("Success:", data);
       })
